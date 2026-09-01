@@ -1,0 +1,160 @@
+<svg
+  width="1800"
+  height="600"
+  viewBox="0 0 1800 600"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Infra Monitor</title>
+  <desc id="desc">Logo for an infrastructure monitoring SaaS with cloud, servers, heartbeat and analytics.</desc>
+
+  <defs>
+    <linearGradient id="cloudGradient" x1="0%" y1="10%" x2="100%" y2="90%">
+      <stop offset="0%" stop-color="#24D1D4"/>
+      <stop offset="48%" stop-color="#1FA8E0"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <linearGradient id="monitorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="55%" stop-color="#22A7E0"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
+    </linearGradient>
+
+    <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#22D3C5"/>
+    </linearGradient>
+
+    <linearGradient id="serverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#243B55"/>
+      <stop offset="100%" stop-color="#0B162A"/>
+    </linearGradient>
+
+    <linearGradient id="barGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#020617" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <!-- ICON: cloud infrastructure -->
+  <g transform="translate(60 70)" filter="url(#softShadow)">
+    <!-- cloud -->
+    <path
+      d="
+        M 85 365
+        C 36 365, 0 327, 0 275
+        C 0 221, 40 180, 95 180
+        C 120 105, 185 50, 270 50
+        C 354 50, 419 105, 443 180
+        C 500 180, 540 221, 540 275
+        C 540 327, 504 365, 455 365
+        Z
+      "
+      fill="url(#cloudGradient)"
+    />
+
+    <!-- inner cloud -->
+    <path
+      d="
+        M 108 350
+        C 66 350, 35 319, 35 277
+        C 35 235, 67 205, 111 205
+        L 166 205
+        C 178 143, 216 101, 270 101
+        C 324 101, 362 143, 374 205
+        L 428 205
+        C 472 205, 505 235, 505 277
+        C 505 319, 474 350, 432 350
+        Z
+      "
+      fill="#0A1730"
+      opacity=".96"
+    />
+
+    <!-- server rack 1 -->
+    <rect x="105" y="205" width="245" height="62" rx="16" fill="url(#serverGradient)" stroke="#5EAED4" stroke-width="5"/>
+    <circle cx="142" cy="236" r="13" fill="#24D1D4"/>
+    <rect x="226" y="226" width="83" height="12" rx="6" fill="#53B6E5"/>
+    <rect x="306" y="226" width="25" height="12" rx="6" fill="#1C496A"/>
+
+    <!-- server rack 2 -->
+    <rect x="105" y="280" width="245" height="62" rx="16" fill="url(#serverGradient)" stroke="#4C8FC2" stroke-width="5"/>
+    <circle cx="142" cy="311" r="13" fill="#24D1D4"/>
+    <rect x="226" y="301" width="83" height="12" rx="6" fill="#53B6E5"/>
+    <rect x="306" y="301" width="25" height="12" rx="6" fill="#1C496A"/>
+
+    <!-- server rack 3 -->
+    <rect x="105" y="355" width="245" height="62" rx="16" fill="url(#serverGradient)" stroke="#396E98" stroke-width="5"/>
+    <circle cx="142" cy="386" r="13" fill="#24D1D4"/>
+    <rect x="226" y="376" width="83" height="12" rx="6" fill="#53B6E5"/>
+    <rect x="306" y="376" width="25" height="12" rx="6" fill="#1C496A"/>
+
+    <!-- heartbeat -->
+    <path
+      d="
+        M 375 310
+        L 404 310
+        L 431 215
+        L 468 390
+        L 505 302
+        L 600 302
+      "
+      fill="none"
+      stroke="url(#pulseGradient)"
+      stroke-width="22"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- analytics bars -->
+    <rect x="535" y="365" width="22" height="45" rx="5" fill="url(#barGradient)"/>
+    <rect x="570" y="335" width="22" height="75" rx="5" fill="url(#barGradient)"/>
+    <rect x="605" y="300" width="22" height="110" rx="5" fill="url(#barGradient)"/>
+  </g>
+
+  <!-- DIVIDER -->
+  <rect x="700" y="120" width="6" height="360" rx="3" fill="#9AAFC7" opacity=".9"/>
+
+  <!-- WORDMARK -->
+  <g transform="translate(760 95)">
+    <text
+      x="0"
+      y="145"
+      fill="#F8FAFC"
+      font-family="Inter, Arial, Helvetica, sans-serif"
+      font-size="185"
+      font-weight="800"
+      letter-spacing="-9"
+    >Infra</text>
+
+    <text
+      x="0"
+      y="330"
+      fill="url(#monitorGradient)"
+      font-family="Inter, Arial, Helvetica, sans-serif"
+      font-size="185"
+      font-weight="800"
+      letter-spacing="-10"
+    >Monitor</text>
+
+    <!-- Subtitle rails -->
+    <rect x="0" y="405" width="70" height="5" rx="2.5" fill="#2DD4BF"/>
+    <rect x="605" y="405" width="70" height="5" rx="2.5" fill="#2DD4BF"/>
+
+    <text
+      x="92"
+      y="417"
+      fill="#9FB4CC"
+      font-family="Inter, Arial, Helvetica, sans-serif"
+      font-size="28"
+      font-weight="600"
+      letter-spacing="8"
+    >INFRASTRUCTURE SAAS</text>
+  </g>
+</svg>

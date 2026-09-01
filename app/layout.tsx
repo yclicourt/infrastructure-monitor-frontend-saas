@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <link rel="icon" href="/favicon.svg" sizes="any" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

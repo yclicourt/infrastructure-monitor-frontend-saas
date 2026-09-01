@@ -1,12 +1,11 @@
-import React, { ReactNode } from "react";
-import { Background } from "./components/common/Background";
+import DashboardLayout from "./features/dashboard/layout";
 
-const HomePage = ({ children }: { children?: ReactNode }) => {
+const HomePage = () => {
   return (
     <>
-      <div>
-        <Background>{children}</Background>
-      </div>
+      <main>
+        <DashboardLayout />
+      </main>
     </>
   );
 };
