@@ -1,7 +1,7 @@
 import { incidents } from "@/app/constants/incidents";
 
 import { stylesIncidentStatus } from "@/app/constants/status-incident";
-import { IncidentStatusIcon } from "../../common/IncidentStatusIcon";
+import { IncidentStatusIcon } from "./IncidentStatusIcon";
 
 export default function CardIncidentItem() {
   return incidents.map((inc) => {
@@ -11,7 +11,7 @@ export default function CardIncidentItem() {
     return (
       <div
         key={inc.title}
-        className="flex items-center mt-4 gap-2 bg-gray-900 p-4 border border-white/20 rounded-xl"
+        className="flex items-center mt-4 gap-2 bg-gray-800 p-4 border border-white/20 rounded-xl"
       >
         <IncidentStatusIcon status={inc.status} />
 

@@ -1,5 +1,7 @@
+import { OverviewSkeleton } from "@/app/components/dashboard/OverviewSkeleton";
+
 function Loading() {
-  return <div>Loading</div>;
+  return <OverviewSkeleton/>;
 }
 
 export default Loading;

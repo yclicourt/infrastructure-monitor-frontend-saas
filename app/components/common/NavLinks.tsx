@@ -1,10 +1,14 @@
-"use client"
+"use client";
 
 import { navigationSections } from "@/app/constants/links";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function NavLinks() {
+interface NavLinksProps {
+  onNavigate?: () => void;
+}
+
+export default function NavLinks({ onNavigate }: NavLinksProps) {
   const pathname = usePathname();
 
   return (
@@ -25,10 +29,11 @@ export default function NavLinks() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={onNavigate}
                 className={`flex h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-all ${
                   isActive
-                    ? "bg-[#1D2A44] text-white border-l-4 border-[#00F2FE] pl-2.5" 
-                    : "text-[#94A3B8] hover:bg-[#121A2B]/60 hover:text-white" 
+                    ? "bg-[#1D2A44] text-white border-l-4 border-[#00F2FE] pl-2.5"
+                    : "text-[#94A3B8] hover:bg-[#121A2B]/60 hover:text-white"
                 }`}
               >
                 <LinkIcon

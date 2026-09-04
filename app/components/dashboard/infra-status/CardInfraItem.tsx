@@ -1,6 +1,6 @@
 import { infraStatus } from "@/app/constants/infra-status";
 import { stylesInfraPercentageStatus } from "@/app/constants/status-infra-percentage";
-import { InfrastructureStatusIcon } from "../../common/InfrastructureStatusIcon";
+import { InfrastructureStatusIcon } from "./InfrastructureStatusIcon";
 
 export default function CardInfraItem() {
   return infraStatus.map((inf) => {
@@ -11,7 +11,7 @@ export default function CardInfraItem() {
     return (
       <div
         key={inf.title}
-        className="flex items-center mt-4 gap-2 bg-gray-900 p-4 border border-white/20 rounded-xl"
+        className="flex items-center mt-4 gap-2 bg-gray-800 p-4 border border-white/20 rounded-xl"
       >
         <InfrastructureStatusIcon status={inf.status} />
 
