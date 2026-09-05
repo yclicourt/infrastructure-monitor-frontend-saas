@@ -26,7 +26,11 @@ export const navigationSections = [
         href: "/features/dashboard/organizations/clients",
         icon: FaUsers,
       },
-      { name: "Assets", href: "/features/dashboard/assets", icon: FaServer },
+      {
+        name: "Assets",
+        href: "/features/dashboard/organizations/assets",
+        icon: FaServer,
+      },
     ],
   },
   {
@@ -39,7 +43,7 @@ export const navigationSections = [
       },
       {
         name: "Incidents",
-        href: "/features/dashboard/incidents",
+        href: "/features/dashboard/organizations/incidents",
         icon: FaExclamationTriangle,
       },
     ],

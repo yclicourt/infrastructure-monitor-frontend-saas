@@ -35,7 +35,7 @@ function DashboardOverview() {
       </section>
 
       {/* Section alerts */}
-      <section className="grid grid-cols-1 gap-7 md:grid-cols-2 mt-2">
+      <section className="grid grid-cols-1 gap-2 md:grid-cols-2 mt-2">
         <Suspense fallback={<CardSectionStatusSkeleton />}>
           <CardResentIncident />
           <CardInfraStatus />
