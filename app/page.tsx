@@ -1,13 +1,15 @@
-import DashboardLayout from "./features/dashboard/layout";
+import HomePage from "./home/page";
+import LoginPage from "./login/page";
 
-const HomePage = () => {
+const Page = () => {
   return (
     <>
       <main>
-        <DashboardLayout />
+        <LoginPage />
+        <HomePage />
       </main>
     </>
   );
 };
 
-export default HomePage;
+export default Page;
