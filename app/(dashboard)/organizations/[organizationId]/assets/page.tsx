@@ -3,7 +3,9 @@ import FilterAssets from "@/app/components/assets/FilterAssets";
 import TableAssets from "@/app/components/assets/TableAssets";
 import TitleAssets from "@/app/components/assets/TitleAssets";
 
-export default function AssetPage() {
+
+
+async function AssetPage() {
   return (
     <>
       {/* Section Title and Subtitle */}
@@ -13,7 +15,7 @@ export default function AssetPage() {
 
       {/* Section Filter Info */}
       <section>
-        <FilterAssets />
+        <FilterAssets/>
       </section>
 
       {/* Section Card Status */}
@@ -30,3 +32,4 @@ export default function AssetPage() {
     </>
   );
 }
+export default AssetPage;

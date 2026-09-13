@@ -2,19 +2,29 @@
 
 import Footer from "@/app/components/common/Footer";
 import Header from "@/app/components/common/Header";
-import SideNav from "@/app/components/common/SideNav";
 
-import { FC, PropsWithChildren, useState } from "react";
+import { useState } from "react";
+import SideNav from "../components/common/SideNav";
+import OrganizationInitializer from "../components/common/OrganizationInitializer";
 
-const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
+interface DashboardLayoutProps {
+  children: React.ReactNode;
+}
+
+const DashboardLayout = ({
+  children,
+}: DashboardLayoutProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-[#0B101D]">
-      <SideNav isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-
+      <OrganizationInitializer />
+      <SideNav
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         <Header onMenuClick={() => setIsSidebarOpen(true)} />
-
         <main
           className="flex-1
             overflow-y-auto

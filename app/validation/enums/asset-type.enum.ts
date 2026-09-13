@@ -1,0 +1,8 @@
+export enum TypeAsset {
+  SERVER = "SERVER",
+  VM = "VM",
+  NETWORK_DEVICE = "NETWORK_DEVICE",
+  WEBSITE = "WEBSITE",
+  DATABASE = "DATABASE",
+  SERVICE = "SERVICE",
+}

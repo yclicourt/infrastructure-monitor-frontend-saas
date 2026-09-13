@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 
-export default function OrganizationPage() {
+async function OrganizationPage() {
   return (
     <>
       {/* Section Title and Subtitle */}
@@ -23,24 +23,24 @@ export default function OrganizationPage() {
             <Link
               href={"#"}
               className="flex
-          w-full
-          items-center
-          justify-center
-          gap-2
-          rounded-md
-          border
-          border-blue-300
-          bg-blue-400
-          px-4
-          py-3
-          text-sm
-          font-semibold
-          text-black
-          transition
-          hover:text-white
-          sm:w-auto
-          sm:px-6
-          sm:text-base"
+                w-full
+                items-center
+                justify-center
+                gap-2
+                rounded-md
+                border
+                border-blue-300
+                bg-blue-400
+                px-4
+                py-3
+                text-sm
+                font-semibold
+                text-black
+                transition
+                hover:text-white
+                sm:w-auto
+                sm:px-6
+                sm:text-base"
             >
               <FaPlus className="text-sm" /> New Organization
             </Link>
@@ -92,3 +92,4 @@ export default function OrganizationPage() {
     </>
   );
 }
+export default OrganizationPage;

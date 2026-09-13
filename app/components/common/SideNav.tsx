@@ -1,12 +1,13 @@
 import { FaPowerOff, FaTimes } from "react-icons/fa";
 import NavLinks from "./NavLinks";
 import Logo from "./Logo";
+import { logout } from "@/app/helpers/actions";
 
 interface SideNavProps {
   isOpen: boolean;
   onClose: () => void;
 }
-export default function SideNav({ isOpen, onClose }: SideNavProps) {
+function SideNav({ isOpen, onClose }: SideNavProps) {
   return (
     <>
       {isOpen && (
@@ -78,9 +79,10 @@ export default function SideNav({ isOpen, onClose }: SideNavProps) {
 
         {/* Logout */}
         <div className="mt-4 border-t border-[#1E293B] pt-4">
-          <button
-            type="button"
-            className="
+          <form action={logout}>
+            <button
+              type="submit"
+              className="
               flex
               h-11
               w-full
@@ -99,13 +101,15 @@ export default function SideNav({ isOpen, onClose }: SideNavProps) {
               hover:bg-red-500/10
               hover:text-red-400
             "
-          >
-            <FaPowerOff className="w-5" />
+            >
+              <FaPowerOff className="w-5" />
 
-            <span>Logout</span>
-          </button>
+              <span>Logout</span>
+            </button>
+          </form>
         </div>
       </aside>
     </>
   );
 }
+export default SideNav;

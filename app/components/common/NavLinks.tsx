@@ -1,6 +1,7 @@
 "use client";
 
-import { navigationSections } from "@/app/constants/links";
+import { getNavigationSections } from "@/app/constants/links";
+import { useOrganizationStore } from "@/app/store/organization.store";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -10,6 +11,14 @@ interface NavLinksProps {
 
 export default function NavLinks({ onNavigate }: NavLinksProps) {
   const pathname = usePathname();
+
+  const activeOrganization = useOrganizationStore(
+    (state) => state.activeOrganization,
+  );
+
+  const organizationId = activeOrganization?.id;
+
+  const navigationSections = getNavigationSections(organizationId);
 
   return (
     <div className="flex flex-col gap-6">

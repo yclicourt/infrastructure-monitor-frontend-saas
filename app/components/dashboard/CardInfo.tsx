@@ -1,6 +1,64 @@
-import { cards } from "@/app/constants/cards";
+"use client";
 
-export default function CardInfo() {
+import { fetchTotalAssets } from "@/app/helpers/api";
+import { useOrganizationStore } from "@/app/store/organization.store";
+import { Server, HeartPulse, TriangleAlert, Gauge } from "lucide-react";
+import { useEffect, useState } from "react";
+
+function CardInfo() {
+  const [totalAssets, setTotalAssets] = useState(0);
+
+  const activeOrganization = useOrganizationStore(
+    (state) => state.activeOrganization,
+  );
+
+  const organizationId = activeOrganization?.id;
+
+  useEffect(() => {
+    if (!organizationId) return;
+    const loadAssets = async () => {
+      try {
+        const result = await fetchTotalAssets(organizationId);
+        setTotalAssets(result);
+      } catch (error) {
+        console.error("Error fetching total assets:", error);
+        setTotalAssets(0);
+      }
+    };
+    loadAssets();
+  }, [organizationId]);
+
+  if (!activeOrganization) {
+    return null;
+  }
+
+  const cards = [
+    {
+      title: "Total Assets",
+      icon: Server,
+      value: `${totalAssets}`,
+      iconColor: "text-cyan-400",
+    },
+    {
+      title: "Healthy",
+      icon: HeartPulse,
+      value: 21,
+      iconColor: "text-cyan-400",
+    },
+    {
+      title: "Alerts",
+      icon: TriangleAlert,
+      value: 2,
+      iconColor: "text-cyan-400",
+    },
+    {
+      title: "Uptime",
+      icon: Gauge,
+      value: 99.8,
+      iconColor: "text-cyan-400",
+    },
+  ];
+
   return cards.map((card) => {
     const LinIcon = card.icon;
     return (
@@ -45,3 +103,5 @@ export default function CardInfo() {
     );
   });
 }
+
+export default CardInfo;

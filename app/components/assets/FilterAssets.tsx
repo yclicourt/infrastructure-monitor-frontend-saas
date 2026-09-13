@@ -1,7 +1,7 @@
 import { organizations } from "@/app/constants/organizations";
 import { FaChevronDown, FaSearch } from "react-icons/fa";
 
-export default function FilterAssets() {
+function FilterAssets() {
   return (
     <div className="mt-5 flex w-full flex-col gap-3 md:flex-row">
       {/* Organization Select */}
@@ -184,3 +184,4 @@ export default function FilterAssets() {
     </div>
   );
 }
+export default FilterAssets;

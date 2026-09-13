@@ -1,4 +1,5 @@
-import BackHome from "@/app/components/login/BackHome";
+
+;
 import LoginBackground from "@/app/components/login/LoginBackground";
 import LoginContainer from "@/app/components/login/LoginContainer";
 
@@ -8,10 +9,6 @@ export default function LoginPage() {
       {/* Background */}
 
       <LoginBackground />
-
-      {/* Back Home */}
-
-      <BackHome />
 
       {/* Login Container */}
       <LoginContainer />

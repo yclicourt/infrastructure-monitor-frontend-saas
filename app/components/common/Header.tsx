@@ -1,3 +1,4 @@
+import { useOrganizationStore } from "@/app/store/organization.store";
 import { FaSearch, FaBell, FaChevronDown } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
 
@@ -6,6 +7,15 @@ interface HeaderProps {
 }
 
 export default function Header({ onMenuClick }: HeaderProps) {
+  // Aqui se llama el estado global creado con zustand
+  const organizations = useOrganizationStore((state) => state.organizations);
+  const activeOrganization = useOrganizationStore(
+    (state) => state.activeOrganization,
+  );
+  const setActiveOrganization = useOrganizationStore(
+    (state) => state.setActiveOrganization,
+  );
+
   return (
     <header
       className="relative
@@ -74,6 +84,67 @@ export default function Header({ onMenuClick }: HeaderProps) {
           sm:text-base"
           />
         </div>
+      </div>
+
+      {/* Organization Selector */}
+      <div className="relative shrink-0">
+        <select
+          value={activeOrganization?.id ?? ""}
+          onChange={(event) => {
+            const organization = organizations.find(
+              (org) => org.id === Number(event.target.value),
+            );
+
+            if (organization) {
+              setActiveOrganization(organization);
+            }
+          }}
+          className="
+          h-10
+          min-w-32
+          max-w-52
+          appearance-none
+          rounded-lg
+          border
+          border-[#1E293B]
+          bg-[#121A2B]
+          px-3
+          pr-9
+          text-sm
+          font-medium
+          text-slate-200
+          outline-none
+          transition-all
+          hover:border-slate-700
+          focus:border-[#00F2FE]
+          focus:ring-1
+          focus:ring-[#00F2FE]/40
+          sm:min-w-40
+        "
+          aria-label="Select organization"
+        >
+          {organizations.map((organization) => (
+            <option
+              key={organization.id}
+              value={organization.id}
+              className="bg-[#121A2B] text-slate-200"
+            >
+              {organization.name}
+            </option>
+          ))}
+        </select>
+
+        <FaChevronDown
+          className="
+          pointer-events-none
+          absolute
+          right-3
+          top-1/2
+          -translate-y-1/2
+          text-[10px]
+          text-slate-400
+        "
+        />
       </div>
 
       {/* 3. Lado Derecho: Notificaciones, Divisor interior y Perfil */}

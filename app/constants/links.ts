@@ -8,27 +8,33 @@ import {
 import { FaServer } from "react-icons/fa6";
 import { VscOrganization } from "react-icons/vsc";
 
-export const navigationSections = [
+export const getNavigationSections = (organizationId: number | undefined) => [
   {
     title: "Overview",
-    items: [{ name: "Overview", href: "/features/dashboard", icon: FaHome }],
+    items: [
+      {
+        name: "Overview",
+        href: `/organizations/${organizationId}`,
+        icon: FaHome,
+      },
+    ],
   },
   {
     title: "Management",
     items: [
       {
         name: "Organizations",
-        href: "/features/dashboard/organizations",
+        href: "/organizations",
         icon: VscOrganization,
       },
       {
         name: "Clients",
-        href: "/features/dashboard/organizations/clients",
+        href: `/organizations/${organizationId}/clients`,
         icon: FaUsers,
       },
       {
         name: "Assets",
-        href: "/features/dashboard/organizations/assets",
+        href: `/organizations/${organizationId}/assets`,
         icon: FaServer,
       },
     ],
@@ -38,20 +44,18 @@ export const navigationSections = [
     items: [
       {
         name: "Monitoring",
-        href: "/features/dashboard/monitoring",
+        href: "/monitoring",
         icon: FaChartLine,
       },
       {
         name: "Incidents",
-        href: "/features/dashboard/organizations/incidents",
+        href: `/organizations/${organizationId}/incidents`,
         icon: FaExclamationTriangle,
       },
     ],
   },
   {
     title: "System",
-    items: [
-      { name: "Settings", href: "/features/dashboard/settings", icon: FaCog },
-    ],
+    items: [{ name: "Settings", href: "/settings", icon: FaCog }],
   },
 ];

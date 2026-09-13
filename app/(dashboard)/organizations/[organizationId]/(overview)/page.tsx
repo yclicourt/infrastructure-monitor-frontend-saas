@@ -10,7 +10,8 @@ import CardInfraStatus from "@/app/components/dashboard/infra-status/CardInfraSt
 import { bebas } from "@/app/ui/font";
 import { Suspense } from "react";
 
-function DashboardOverview() {
+
+async function DashboardOverview() {
   return (
     <main>
       <h1 className={`${bebas.className} mb-4 text-4xl md:text-2xl`}>
